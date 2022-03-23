@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mancia",
+  "version": "${version}",
+  "name": "Mancia",
+  "description": "A magic mod for people who like to choose their own path",
+  "authors": [
+    "Morticia"
+  ],
+  "contact": {
+    "repo": "[placeholder]"
+  },
+  "license": "MIT",
+  "icon": "assets/Mancia/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "morticia.mancia.client.ManciaClient"
+    ],
+    "main": [
+      "morticia.mancia.Mancia"
+    ]
+  },
+  "mixins": [
+    "Mancia.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "fabric-key-binding-api-v1": "*",
+    "minecraft": "1.18.2"
+  }
+}
