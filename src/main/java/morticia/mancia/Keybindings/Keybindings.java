@@ -13,7 +13,7 @@ import org.lwjgl.glfw.GLFW;
 public class Keybindings {
     public static String keyBindingCategory = "category." + Mancia.MOD_ID + ".keybindings";
 
-    private static KeyBinding openAuraGui;
+    public static KeyBinding openAuraGui;
 
     public static void initKeyBindings() {
         openAuraGui = KeyBindingHelper.registerKeyBinding(new KeyBinding(
