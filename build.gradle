@@ -23,13 +23,17 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     // API to efficiently append data to minecraft classes
-    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:4.1.4"
-    /*modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:4.1.4"
+    // *not working so I'm just going to use mixins
+    //modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:4.1.0"
+    //include "dev.onyxstudios.cardinal-components-api:cardinal-components-api:4.1.0"
+
+    /*modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:4.1.4"
+    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:4.1.4"
     modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:4.1.4"
-    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-block:4.1.4"*/
+    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-block:4.1.4"
 
     include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:4.1.4"
-    /*include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:4.1.4"
+    include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:4.1.4"
     include "dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:4.1.4"
     include "dev.onyxstudios.cardinal-components-api:cardinal-components-block:4.1.4"*/
 }

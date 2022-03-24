@@ -8,7 +8,7 @@
     "Morticia"
   ],
   "contact": {
-    "repo": "[placeholder]"
+    "repo": "https://github.com/MorticiaGrey/Mancia"
   },
   "license": "MIT",
   "icon": "assets/Mancia/icon.png",
@@ -29,5 +29,10 @@
     "fabric": "*",
     "fabric-key-binding-api-v1": "*",
     "minecraft": "1.18.2"
+  },
+  "custom": {
+    "cardinal-components": [
+      "mancia:playercomponent"
+    ]
   }
 }
