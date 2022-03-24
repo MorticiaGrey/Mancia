@@ -31,8 +31,8 @@
     "minecraft": "1.18.2"
   },
   "custom": {
-    "cardinal-components": [
-      "mancia:playercomponent"
-    ]
+    "loom:injected_interfaces": {
+      "net/minecraft/entity/player/PlayerEntity": ["morticia/mancia/PlayerDataAdditions"]
+    }
   }
 }

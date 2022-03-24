@@ -1,6 +1,7 @@
 package morticia.mancia.Gui.AuraManagementScreen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import morticia.mancia.Alignment.ManciaAlignment;
 import morticia.mancia.Keybindings.Keybindings;
 import morticia.mancia.Mancia;
 import net.fabricmc.api.EnvType;
@@ -11,6 +12,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.ColorHelper;
+
+import java.util.Objects;
 
 import static net.minecraft.client.gui.screen.ingame.InventoryScreen.drawEntity;
 
@@ -42,6 +45,9 @@ public class AuraScreen extends Screen {
 
     public AuraScreen(Text title, ClientAuraScreenManager auraHandler) {
         super(title);
+        if (client != null && client.player != null) {
+            client.player.synchronize();
+        }
         this.auraHandler = auraHandler;
     }
 
@@ -68,6 +74,7 @@ public class AuraScreen extends Screen {
         this.renderBackground(matrices);
         this.drawWindow(matrices, i, j);
         this.drawBorder(matrices, i, j);
+        this.writeStats(matrices, i * 2, j * 2);
     }
 
     public void drawWindow(MatrixStack matrices, int x, int y) {
@@ -89,6 +96,7 @@ public class AuraScreen extends Screen {
 
     // Writes the stats this gui is meant to display (alignment, level, effects, etc.)
     public void writeStats(MatrixStack matrices, int x, int y) {
-
+        Objects.requireNonNull(textRenderer);
+        drawCenteredText(matrices, textRenderer, "test", x, y, -1);
     }
 }
