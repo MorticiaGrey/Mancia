@@ -98,7 +98,7 @@ public class AuraScreen extends Screen {
     // Writes the stats this gui is meant to display (alignment, level, effects, etc.)
     public void writeStats(MatrixStack matrices, int x, int y) {
         Objects.requireNonNull(textRenderer);
-        // Add the offset here so I'm not doing the same thing like 5 times
+        // Add the offset here so I'm not doing the same thing 6 times
         x -= 23;
         y -= 5;
         drawTextWithShadow(matrices, textRenderer, Text.of("Level " + client.player.m_getLevel() + " " + client.player.m_getAlignment().toString()), x, y, -1);

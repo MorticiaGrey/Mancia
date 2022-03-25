@@ -1,6 +1,7 @@
 package morticia.mancia;
 
 import morticia.mancia.Abilities.AbilityUtil;
+import morticia.mancia.Multiblocks.MultiblockUtil;
 import morticia.mancia.Registry.ModItems;
 import morticia.mancia.Utils.Constants;
 import net.fabricmc.api.ModInitializer;
@@ -16,6 +17,7 @@ public class Mancia implements ModInitializer {
     public void onInitialize() {
         ModItems.initItems();
         AbilityUtil.initAbilities();
+        MultiblockUtil.initMultiblocks();
 
         // Register server packet responses
         ServerPlayNetworking.registerGlobalReceiver(Constants.REQUEST_PLAYER_DATA,

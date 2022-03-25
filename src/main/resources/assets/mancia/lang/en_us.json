@@ -1,4 +1,7 @@
 {
   "category.mancia.keybindings": "Mancia",
-  "key.mancia.open_aura_gui_keybinding": "Open Aura Management Gui"
+  "key.mancia.open_aura_gui_keybinding": "Open Aura Management Gui",
+
+  "itemGroup.mancia.item_group": "Mancia",
+  "item.mancia.debug_wand": "Debug Wand"
 }
