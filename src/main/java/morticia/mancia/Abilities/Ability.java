@@ -11,6 +11,6 @@ public class Ability {
 
     @Override
     public String toString() {
-        return this.abilityName + ": id - " + this.id;
+        return this.abilityName;
     }
 }

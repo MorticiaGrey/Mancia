@@ -5,7 +5,6 @@ import morticia.mancia.Alignment.ManciaAlignment;
 import net.minecraft.nbt.NbtCompound;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface PlayerDataAdditions {
     default void initialize() {
@@ -20,56 +19,56 @@ public interface PlayerDataAdditions {
 
     }
 
-    default Optional<Integer> m_getLevel() {
-        return Optional.empty();
+    default Integer m_getLevel() {
+        return null;
     }
 
     default void m_setLevel(int level) {
 
     }
 
-    default Optional<Float> m_getAuraStrength() {
-        return Optional.empty();
+    default Float m_getAuraStrength() {
+        return null;
     }
 
     default void m_setAuraStrength(float strength) {
 
     }
 
-    default Optional<Float> m_getMaxAuraStrength() {
-        return Optional.empty();
+    default Float m_getMaxAuraStrength() {
+        return null;
     }
 
     default void m_setMaxAuraStrength(float strength) {
 
     }
 
-    default Optional<Float> m_getAuraRegenRateh() {
-        return Optional.empty();
+    default Float m_getAuraRegenRate() {
+        return null;
     }
 
     default void m_setAuraRegenRate(float rate) {
 
     }
 
-    default Optional<Ability> m_getActiveAbility() {
-        return Optional.empty();
+    default Ability m_getActiveAbility() {
+        return null;
     }
 
     default void m_setActiveAbility(Ability ability) {
 
     }
 
-    default Optional<Ability> m_getPassiveAbility() {
-        return Optional.empty();
+    default Ability m_getPassiveAbility() {
+        return null;
     }
 
     default void m_setPassiveAbility(Ability ability) {
 
     }
 
-    default Optional<List<Ability>> m_getAvailableAbilities() {
-        return Optional.empty();
+    default List<Ability> m_getAvailableAbilities() {
+        return null;
     }
 
     default void m_setAvailableAbilities(List<Ability> abilities) {

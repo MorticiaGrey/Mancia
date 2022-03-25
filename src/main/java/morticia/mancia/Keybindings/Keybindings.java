@@ -27,6 +27,7 @@ public class Keybindings {
             while (openAuraGui.wasPressed()) {
                 // Actions to execute when keybind pressed
                 if (client.player != null) {
+                    client.player.synchronize();
                     //client.player.sendMessage(new LiteralText("Pressed"), false);
                     // TODO: 3/22/22 Replace with aura management screen 
                     client.setScreen(new AuraScreen(new LiteralText("Test"), new ClientAuraScreenManager(client))); // Use translatable text

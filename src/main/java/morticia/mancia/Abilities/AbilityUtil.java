@@ -9,7 +9,7 @@ public class AbilityUtil {
     private static Ability nullAbility;
 
     public static void initAbilities() {
-        nullAbility = new Ability("null");
+        nullAbility = new Ability("No Ability");
         abilityList.add(nullAbility);
     }
 

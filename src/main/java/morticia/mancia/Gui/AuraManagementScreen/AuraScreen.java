@@ -1,7 +1,6 @@
 package morticia.mancia.Gui.AuraManagementScreen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import morticia.mancia.Alignment.ManciaAlignment;
 import morticia.mancia.Keybindings.Keybindings;
 import morticia.mancia.Mancia;
 import net.fabricmc.api.EnvType;
@@ -35,8 +34,8 @@ public class AuraScreen extends Screen {
     public static final int OFFSET_Y = 0;
 
     // Character entity rendering settings
-    public static final int PLAYER_OFFSET_X = 31; // 51
-    public static final int PLAYER_OFFSET_Y = 78;
+    public static final int PLAYER_OFFSET_X = 31;
+    public static final int PLAYER_OFFSET_Y = 87;
     public static final int PLAYER_SIZE = 35;
 
     // Keep track of mouse position
@@ -45,8 +44,10 @@ public class AuraScreen extends Screen {
 
     public AuraScreen(Text title, ClientAuraScreenManager auraHandler) {
         super(title);
-        if (client != null && client.player != null) {
-            client.player.synchronize();
+        if (auraHandler.client != null && auraHandler.client.player != null) {
+            auraHandler.client.player.synchronize();
+        } else {
+            System.out.println("Client is null");
         }
         this.auraHandler = auraHandler;
     }
@@ -97,6 +98,14 @@ public class AuraScreen extends Screen {
     // Writes the stats this gui is meant to display (alignment, level, effects, etc.)
     public void writeStats(MatrixStack matrices, int x, int y) {
         Objects.requireNonNull(textRenderer);
-        drawCenteredText(matrices, textRenderer, "test", x, y, -1);
+        // Add the offset here so I'm not doing the same thing like 5 times
+        x -= 23;
+        y -= 5;
+        drawTextWithShadow(matrices, textRenderer, Text.of("Level " + client.player.m_getLevel() + " " + client.player.m_getAlignment().toString()), x, y, -1);
+        drawTextWithShadow(matrices, textRenderer, Text.of("Aura Strength: " + client.player.m_getAuraStrength().toString()), x, y + 15, -1);
+        drawTextWithShadow(matrices, textRenderer, Text.of("Max Aura Strength: " + client.player.m_getMaxAuraStrength().toString()), x, y + 30, -1);
+        drawTextWithShadow(matrices, textRenderer, Text.of("Aura Regen Rate: " + client.player.m_getAuraRegenRate().toString()), x, y + 45, -1);
+        drawTextWithShadow(matrices, textRenderer, Text.of("Active Ability: " + client.player.m_getActiveAbility().toString()), x, y + 60, -1);
+        drawTextWithShadow(matrices, textRenderer, Text.of("Passive Ability: " + client.player.m_getPassiveAbility().toString()), x, y + 75, -1);
     }
 }

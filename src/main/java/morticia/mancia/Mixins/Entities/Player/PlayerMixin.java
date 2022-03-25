@@ -72,56 +72,56 @@ public abstract class PlayerMixin extends Entity implements PlayerDataAdditions 
         System.out.println("Alignment set to: " + this.alignment);
     }
 
-    public Optional<Integer> m_getLevel() {
-        return Optional.of(this.level);
+    public Integer m_getLevel() {
+        return this.level;
     }
 
     public void m_setLevel(int level) {
         this.level = level;
     }
 
-    public Optional<Float> m_getAuraStrength() {
-        return Optional.of(auraStrength);
+    public Float m_getAuraStrength() {
+        return auraStrength;
     }
 
     public void m_setAuraStrength(float strength) {
         this.auraStrength = strength;
     }
 
-    public Optional<Float> m_getMaxAuraStrength() {
-        return Optional.of(this.maxAuraStrength);
+    public Float m_getMaxAuraStrength() {
+        return this.maxAuraStrength;
     }
 
     public void m_setMaxAuraStrength(float strength) {
         this.maxAuraStrength = strength;
     }
 
-    public Optional<Float> m_getAuraRegenRateh() {
-        return Optional.of(auraRegenRate);
+    public Float m_getAuraRegenRate() {
+        return auraRegenRate;
     }
 
     public void m_setAuraRegenRate(float rate) {
         this.auraRegenRate = rate;
     }
 
-    public Optional<Ability> m_getActiveAbility() {
-        return Optional.of(activeAbility);
+    public Ability m_getActiveAbility() {
+        return activeAbility;
     }
 
     public void m_setActiveAbility(Ability ability) {
         this.activeAbility = ability;
     }
 
-    public Optional<Ability> m_getPassiveAbility() {
-        return Optional.of(this.passiveAbility);
+    public Ability m_getPassiveAbility() {
+        return this.passiveAbility;
     }
 
     public void m_setPassiveAbility(Ability ability) {
         this.passiveAbility = ability;
     }
 
-    public Optional<List<Ability>> m_getAvailableAbilities() {
-        return Optional.of(this.availableAbilities);
+    public List<Ability> m_getAvailableAbilities() {
+        return this.availableAbilities;
     }
 
     public void m_setAvailableAbilities(List<Ability> abilities) {
@@ -157,9 +157,12 @@ public abstract class PlayerMixin extends Entity implements PlayerDataAdditions 
     }
 
     public void readManciaNbt(NbtCompound nbt) {
+        System.out.println("[read] Server: " + !world.isClient + "    Read Reached");
         this.isInitialized = nbt.getBoolean("manciaIsInitialized");
         initialize();
+        System.out.println("[read] Server: " + !world.isClient + "    Alignment: " + this.alignment);
         this.alignment = AlignmentUtil.convert(nbt.getInt("manciaAlignment"));
+        System.out.println("[read_2] Server: " + !world.isClient + "    Alignment: " + this.alignment);
         this.level = nbt.getInt("manciaLevel");
         this.auraStrength = nbt.getFloat("manciaAuraStrength");
         this.maxAuraStrength = nbt.getFloat("manciaMaxAuraStrength");
@@ -174,6 +177,7 @@ public abstract class PlayerMixin extends Entity implements PlayerDataAdditions 
     }
 
     public NbtCompound writeManciaNbt(NbtCompound nbt) {
+        System.out.println("[write] Server: " + !world.isClient + "    Alignment: " + this.alignment);
         nbt.putInt("manciaAlignment", AlignmentUtil.convert(this.alignment));
         nbt.putInt("manciaLevel", this.level);
         nbt.putFloat("manciaAuraStrength", this.auraStrength);

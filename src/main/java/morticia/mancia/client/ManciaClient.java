@@ -16,12 +16,12 @@ public class ManciaClient implements ClientModInitializer {
         ClientPlayNetworking.registerGlobalReceiver(Constants.PLAYER_DATA_SYNC,
                 (client, handler, buf, responseSender) -> {
                     System.out.println("Player Data Sync Packet Received");
-                    NbtCompound maciaNbt = buf.readNbt();
-                    client.execute(() -> {
-                        if (client.player != null) {
-                            client.player.readManciaNbt(maciaNbt);
-                        }
-                    });
+                    NbtCompound manciaNbt = buf.readNbt();
+                    if (client.player != null) {
+                        client.player.readManciaNbt(manciaNbt);
+                    } else {
+                        System.out.println("Player Sync Failed: client.player is null");
+                    }
                 });
     }
 }
