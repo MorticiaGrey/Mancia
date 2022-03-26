@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "":{ "model": "mancia:block/living_ore" }
+  }
+}

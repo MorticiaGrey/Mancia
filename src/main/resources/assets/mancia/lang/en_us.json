@@ -3,5 +3,13 @@
   "key.mancia.open_aura_gui_keybinding": "Open Aura Management Gui",
 
   "itemGroup.mancia.item_group": "Mancia",
-  "item.mancia.debug_wand": "Debug Wand"
+  "item.mancia.debug_wand": "Debug Wand",
+  "item.mancia.ritual_knife": "Ritual Knife",
+  "item.mancia.necrotic_ingot": "Necrotic Ingot",
+  "item.mancia.living_ingot": "Living Ingot",
+
+  "block.mancia.necrotic_stone": "Necrotic Stone",
+  "block.mancia.necrotic_ore": "Necrotic Ore",
+  "block.mancia.living_stone": "Living Stone",
+  "block.mancia.living_ore": "Living Ore"
 }
